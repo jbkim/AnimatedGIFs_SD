@@ -55,3 +55,10 @@ Many thanks to Craig A. Lindley and Louis Beaudoin (Pixelmatix) for their origin
 
 #define SPI_FREQUENCY  40000000 // Maximum to use SPIFFS
 ~~~
+
+## gif 이미지 사이즈 수정: ezgif.com
+- Resize 메뉴를 사용하고,320x240 사이즈로 선택
+- resize method은 ImageMagick + coalesce
+- aspect ratio는 center or force-aspect를 선택
+- 중복 프레임을 줄이려면 Fuzz factor를 25% 정도로 해서 조절한다.
+- 참고: https://learn.adafruit.com/pyportal-animated-gif-display?view=all
