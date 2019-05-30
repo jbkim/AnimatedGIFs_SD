@@ -30,7 +30,7 @@ GifDecoder<GIFWIDTH, 320, 12> decoder;
 #endif
 
 #if defined(ESP32)
-#define SD_CS 17
+#define SD_CS 4
 #include <SPI.h>
 #include <TFT_eSPI.h>
 TFT_eSPI tft;
