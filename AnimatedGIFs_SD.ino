@@ -270,9 +270,9 @@ void loop() {
         else good = (openGifFilenameByIndex(GIF_DIRECTORY, index) >= 0);
 
         if (good >= 0) {
-            tft.fillScreen(g_gif ? MAGENTA : DISKCOLOUR);
-            tft.fillRect(GIFWIDTH, 0, 1, tft.height(), WHITE);
-            tft.fillRect(278, 0, 1, tft.height(), WHITE);
+            // tft.fillScreen(g_gif ? MAGENTA : DISKCOLOUR);
+            // tft.fillRect(GIFWIDTH, 0, 1, tft.height(), WHITE);
+            // tft.fillRect(278, 0, 1, tft.height(), WHITE);
 
             decoder.startDecoding();
 
