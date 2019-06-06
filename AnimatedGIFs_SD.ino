@@ -7,8 +7,9 @@
 #include "GifDecoder.h"
 #include "FilenameFunctions.h"    //defines USE_SPIFFS
 
-#define DISPLAY_TIME_SECONDS 80
-#define GIFWIDTH 480 //228 fails on COW_PAINT
+#define DISPLAY_TIME_SECONDS 10
+#define GIFWIDTH    320 //228 fails on COW_PAINT
+#define GIFHEIGHT   240 
 
 /*  template parameters are maxGifWidth, maxGifHeight, lzwMaxBits
 
@@ -17,7 +18,7 @@
     All 32x32-pixel GIFs tested work with 11, most work with 10
 */
 
-GifDecoder<GIFWIDTH, 320, 12> decoder;
+GifDecoder<GIFWIDTH, GIFHEIGHT, 12> decoder;
 
 #if defined(USE_SPIFFS)
 #define GIF_DIRECTORY "/"     //ESP8266 SPIFFS
@@ -267,6 +268,7 @@ void loop() {
         int good;
         if (g_gif) good = (openGifFilenameByIndex_P(GIF_DIRECTORY, index) >= 0);
         else good = (openGifFilenameByIndex(GIF_DIRECTORY, index) >= 0);
+
         if (good >= 0) {
             tft.fillScreen(g_gif ? MAGENTA : DISKCOLOUR);
             tft.fillRect(GIFWIDTH, 0, 1, tft.height(), WHITE);
